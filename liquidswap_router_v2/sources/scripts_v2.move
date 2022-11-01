@@ -2,7 +2,7 @@
 module liquidswap::scripts_v2 {
     use std::signer;
 
-    use aptos_framework::coin;
+    use aptos_framework::coin;//xuj, aptos_framework provided by Aptos cli, source code given by aptos-core
 
     use liquidswap::router_v2;
     use liquidswap_lp::lp_coin::LP;
