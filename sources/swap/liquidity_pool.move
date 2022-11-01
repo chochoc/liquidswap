@@ -126,7 +126,7 @@ module liquidswap::liquidity_pool {
         curves::assert_valid_curve<Curve>();//xuj, none
         assert!(!exists<LiquidityPool<X, Y, Curve>>(@liquidswap_pool_account), ERR_POOL_EXISTS_FOR_PAIR);//xuj, tell if there is LiquidityPool in addr of liquidswap_pool_account
 
-        let pool_cap = borrow_global<PoolAccountCapability>(@liquidswap);//xuj, it must that there are PoolAccountCapability in addr of liquidswap
+        let pool_cap = borrow_global<PoolAccountCapability>(@liquidswap);//xuj, it must be that there are PoolAccountCapability in addr of liquidswap
         let pool_account = account::create_signer_with_capability(&pool_cap.signer_cap);
 
         let (lp_name, lp_symbol) = coin_helper::generate_lp_name_and_symbol<X, Y, Curve>();
