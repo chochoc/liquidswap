@@ -22,7 +22,7 @@ module liquidswap::lp_account {
 
         let (lp_acc, signer_cap) =
             account::create_resource_account(liquidswap_admin, b"liquidswap_account_seed");
-        aptos_framework::code::publish_package_txn(
+        aptos_framework::code::publish_package_txn( //xuj, Publishes a package at the given signer's address.
             &lp_acc,
             lp_coin_metadata_serialized,
             vector[lp_coin_code]
