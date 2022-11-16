@@ -21,7 +21,7 @@ module liquidswap::lp_account {
         assert!(signer::address_of(liquidswap_admin) == @liquidswap, ERR_NOT_ENOUGH_PERMISSIONS);
 
         let (lp_acc, signer_cap) =
-            account::create_resource_account(liquidswap_admin, b"liquidswap_account_seed");
+            account::create_resource_account(liquidswap_admin, b"liquidswap_account_seed");//xuj, lp_acc is signer of resource account just created. signer_cap is ability of resource in account
         aptos_framework::code::publish_package_txn( //xuj, Publishes a package at the given signer's address.
             &lp_acc,
             lp_coin_metadata_serialized,

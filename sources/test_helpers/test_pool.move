@@ -42,7 +42,7 @@ module test_helpers::test_pool {
     }
 
     public fun setup_coins_and_lp_owner(): (signer, signer) {
-        genesis::setup();
+        genesis::setup();//xuj, Initialize aptos framework account and core modules on chain.
 
         initialize_liquidity_pool();
 
